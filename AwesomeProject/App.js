@@ -1,13 +1,28 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { useState } from "react";
+import { StyleSheet, TextInput, View, Button } from "react-native";
 
 export default function App() {
+
+  const[goldInputText, setGoldInputText]=useState('');
+
+const InputHolder=(entertext)=>{
+   setGoldInputText(entertext);
+};
+
+const buttonClick=()=>{
+  console.log(goldInputText);
+};
+
   return (
     <View style={styles.container}>
-      <Text style={styles.dummy}>hy piyumal</Text>
-      <Text style={{margin:16, borderWidth:2, borderColor:'red', color:'green'}}>hy piyumal</Text>
+      <TextInput
+        style={{width:'50%', paddingLeft:15, margin:10, height: 40,borderColor:'grey', borderWidth:1, borderRadius:20}}
+        placeholder="enter....!"
+        onChangeText={InputHolder}
+      />
       <StatusBar style="auto" />
-      <Button title="Learn More" color="#841584" />
+      <Button title="add"  color={"green"} onPress={buttonClick}/>
     </View>
   );
 }
@@ -18,10 +33,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    flexDirection:"row",
   },
 
-  dummy:{
-    color: "red",
-    borderWidth:2
-  }
+  btn:{
+    width: "20%",
+    backgroundColor:"red",
+  },
 });
