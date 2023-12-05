@@ -1,13 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={styles.dummy}>hy piyumal</Text>
-      <Text style={{margin:16, borderWidth:2, borderColor:'red', color:'green'}}>hy piyumal</Text>
+      <Text>hy piyumal</Text>
+      <Text>hy piyumal</Text>
       <StatusBar style="auto" />
-      <Button title="Learn More" color="#841584" />
     </View>
   );
 }
